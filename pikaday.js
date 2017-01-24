@@ -633,6 +633,12 @@
         } else {
             this.show();
         }
+
+        window.addEventListener("resize", function() {
+            if (self.isVisible()) {
+                self.adjustPosition();
+            }
+        });
     };
 
 
