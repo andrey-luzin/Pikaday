@@ -411,7 +411,7 @@
 
     renderTable = function(opts, data, randId)
     {
-        return '<table class="pika-table" role="grid" aria-labelledby="' + randId + '"><caption class="h-sr--text">' + opts.i18n.caption + '</caption>' + renderHead(opts) + renderBody(data) + '</table>';
+        return '<table class="pika-table" role="grid" aria-labelledby="' + randId + '"><caption class="h-sr--only">' + opts.i18n.caption + '</caption>' + renderHead(opts) + renderBody(data) + '</table>';
     },
 
 
