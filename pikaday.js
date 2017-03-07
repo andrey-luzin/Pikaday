@@ -252,7 +252,8 @@
             nextMonth     : 'Next Month',
             months        : ['January','February','March','April','May','June','July','August','September','October','November','December'],
             weekdays      : ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],
-            weekdaysShort : ['Sun','Mon','Tue','Wed','Thu','Fri','Sat']
+            weekdaysShort : ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],
+            caption       : 'Select month and year'
         },
 
         // Theme Classname
@@ -367,7 +368,7 @@
                 opts.i18n.months[i] + '</option>');
         }
 
-        monthHtml = '<div class="pika-label">' + opts.i18n.months[month] + '<select class="pika-select pika-select-month" tabindex="-1">' + arr.join('') + '</select></div>';
+        monthHtml = '<div class="pika-label">' + '<label for="select-month-' + randId + '">' + opts.i18n.months[month] + '</label>' + '<select class="pika-select pika-select-month" tabindex="-1" id="select-month-' + randId + '">' + arr.join('') + '</select></div>';
 
         if (isArray(opts.yearRange)) {
             i = opts.yearRange[0];
@@ -382,7 +383,7 @@
                 arr.push('<option value="' + i + '"' + (i === year ? ' selected="selected"': '') + '>' + (i) + '</option>');
             }
         }
-        yearHtml = '<div class="pika-label">' + year + opts.yearSuffix + '<select class="pika-select pika-select-year" tabindex="-1">' + arr.join('') + '</select></div>';
+        yearHtml = '<div class="pika-label">' + '<label for="select-year-' + randId + '">' + year + opts.yearSuffix + '</label>' + '<select class="pika-select pika-select-year" tabindex="-1" id="select-year-' + randId + '">' + arr.join('') + '</select></div>';
 
         if (opts.showMonthAfterYear) {
             html += yearHtml + monthHtml;
@@ -410,7 +411,7 @@
 
     renderTable = function(opts, data, randId)
     {
-        return '<table cellpadding="0" cellspacing="0" class="pika-table" role="grid" aria-labelledby="' + randId + '">' + renderHead(opts) + renderBody(data) + '</table>';
+        return '<table class="pika-table" role="grid" aria-labelledby="' + randId + '"><caption class="h-sr--text">' + opts.i18n.caption + '</caption>' + renderHead(opts) + renderBody(data) + '</table>';
     },
 
 
