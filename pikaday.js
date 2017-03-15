@@ -329,7 +329,7 @@
 
     renderRow = function(days, isRTL)
     {
-        return '<tr>' + (isRTL ? days.reverse() : days).join('') + '</tr>';
+        return '<tr role="listbox">' + (isRTL ? days.reverse() : days).join('') + '</tr>';
     },
 
     renderBody = function(rows)
@@ -368,7 +368,7 @@
                 opts.i18n.months[i] + '</option>');
         }
 
-        monthHtml = '<div class="pika-label">' + '<label for="select-month-' + randId + '">' + opts.i18n.months[month] + '</label>' + '<select class="pika-select pika-select-month" tabindex="-1" id="select-month-' + randId + '">' + arr.join('') + '</select></div>';
+        monthHtml = '<div class="pika-label">' + '<label for="select-month-' + randId + '">' + opts.i18n.months[month] + '</label>' + '<select class="pika-select pika-select-month" role="listbox" tabindex="-1" id="select-month-' + randId + '">' + arr.join('') + '</select></div>';
 
         if (isArray(opts.yearRange)) {
             i = opts.yearRange[0];
@@ -383,7 +383,7 @@
                 arr.push('<option value="' + i + '"' + (i === year ? ' selected="selected"': '') + '>' + (i) + '</option>');
             }
         }
-        yearHtml = '<div class="pika-label">' + '<label for="select-year-' + randId + '">' + year + opts.yearSuffix + '</label>' + '<select class="pika-select pika-select-year" tabindex="-1" id="select-year-' + randId + '">' + arr.join('') + '</select></div>';
+        yearHtml = '<div class="pika-label">' + '<label for="select-year-' + randId + '">' + year + opts.yearSuffix + '</label>' + '<select class="pika-select pika-select-year" role="listbox" tabindex="-1" id="select-year-' + randId + '">' + arr.join('') + '</select></div>';
 
         if (opts.showMonthAfterYear) {
             html += yearHtml + monthHtml;
