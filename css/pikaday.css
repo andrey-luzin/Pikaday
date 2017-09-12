@@ -50,7 +50,6 @@ http://nicolasgallagher.com/micro-clearfix-hack/
 
 .pika-label {
     display: inline-block;
-    *display: inline;
     position: relative;
     z-index: 9999;
     overflow: hidden;
